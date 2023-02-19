@@ -1,0 +1,46 @@
+{
+  "name": "v3-scroll-lock",
+  "version": "1.1.0",
+  "description": "A scroll lock tool for Vue 3",
+  "type": "module",
+  "main": "dist/v3-scroll-lock.umd.cjs",
+  "module": "dist/v3-scroll-lock.js",
+  "types": "dist/v3-scroll-lock.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint --ext .js,.cjs,.ts,.cts --ignore-path .gitignore . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcastlel/v3-scroll-lock.git"
+  },
+  "keywords": [
+    "vue3",
+    "vue3-scroll-lock",
+    "v-scroll-lock",
+    "body-scroll-lock",
+    "scroll-lock"
+  ],
+  "author": "bcastlel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bcastlel/v3-scroll-lock/issues"
+  },
+  "homepage": "https://github.com/bcastlel/v3-scroll-lock#readme",
+  "devDependencies": {
+    "@types/body-scroll-lock": "^3.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "eslint": "^8.34.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0",
+    "vite-plugin-dts": "^2.0.0-beta.1",
+    "vite-plugin-eslint": "^1.8.1",
+    "vue": "^3.2.47"
+  },
+  "dependencies": {
+    "body-scroll-lock": "^3.1.5"
+  }
+}
