@@ -1,31 +1,45 @@
 import { Directive, Plugin } from 'vue';
-import { disableBodyScroll, enableBodyScroll, BodyScrollOptions } from 'body-scroll-lock';
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+  BodyScrollOptions,
+} from 'body-scroll-lock';
 
-let bodyScrollOptions: BodyScrollOptions = {};
+let pluginBodyScrollOptions: BodyScrollOptions = {};
 
-const v3ScrollLock = <Directive<Element, boolean>>{
+export const lockScroll = (
+  element: Element,
+  bodyScrollOptions = pluginBodyScrollOptions,
+): ReturnType<typeof disableBodyScroll> => disableBodyScroll(element, bodyScrollOptions);
+
+export const unlockScroll = (element: Element): ReturnType<typeof enableBodyScroll> => enableBodyScroll(element);
+
+export const unlockAllScrolls = (): ReturnType<typeof clearAllBodyScrollLocks> => clearAllBodyScrollLocks();
+
+const V3ScrollLockDirective = <Directive<Element, boolean>>{
   mounted(element, { value }) {
     if (value) {
-      disableBodyScroll(element, bodyScrollOptions);
+      lockScroll(element);
     }
   },
 
   updated(element, { value }) {
     if (value) {
-      disableBodyScroll(element, bodyScrollOptions);
+      lockScroll(element);
     } else {
-      enableBodyScroll(element);
+      unlockScroll(element);
     }
   },
 
   beforeUnmount(element) {
-    enableBodyScroll(element);
+    unlockScroll(element);
   },
 };
 
 export default <Plugin<BodyScrollOptions>>{
   install(app, options) {
-    bodyScrollOptions = options;
-    app.directive('scroll-lock', v3ScrollLock);
+    pluginBodyScrollOptions = options;
+    app.directive('scroll-lock', V3ScrollLockDirective);
   },
 };
