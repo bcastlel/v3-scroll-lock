@@ -1,6 +1,6 @@
 {
   "name": "v3-scroll-lock",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A scroll lock tool for Vue 3",
   "type": "module",
   "main": "dist/v3-scroll-lock.umd.cjs",
