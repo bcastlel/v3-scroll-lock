@@ -3,8 +3,14 @@
 **A scroll lock tool for Vue 3.** Works fine on all devices (and browsers). Uses [body-scroll-lock](https://github.com/willmcpo/body-scroll-lock) under the hood. Designed by analogy with [v-scroll-lock](https://github.com/phegman/v-scroll-lock), but intended for Vue 3. I've decided to make it separate from [v-scroll-lock](https://github.com/phegman/v-scroll-lock) because I'm going to improve this tool in the near future.
 
 ## Installation & Setup
+#### NPM
 ```bash
 npm install v3-scroll-lock
+```
+
+#### Yarn
+```bash
+yarn add v3-scroll-lock
 ```
 
 After installation, you have to use the plugin you've just installed in `main.js` (or `main.ts`).
