@@ -1,0 +1,57 @@
+body {
+  font-family: Inter, Helvetica, sans-serif;
+  color: $primary;
+}
+
+[disabled],
+[readonly] {
+  pointer-events: none;
+}
+
+/* Transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.scale-enter-active,
+.scale-leave-active {
+  transition: transform 0.2s;
+}
+
+.scale-enter-from,
+.scale-leave-to {
+  transform: scale(0);
+}
+
+/* Scrollbar */
+$scroll-thumb-color: $mono-lighter;
+
+* {
+  scrollbar-color: $scroll-thumb-color transparent;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+
+  &-thumb {
+    border-radius: 6px;
+    border: 3px solid transparent;
+    background-color: $scroll-thumb-color;
+    background-clip: padding-box;
+
+    &:hover {
+      box-shadow: inset 0 0 0 999px rgba(0, 0, 0, 0.25);
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 999px rgba(0, 0, 0, 0.5);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+/* Palette */
+$primary: #2e4154;
+$secondary: #3aa575;
+$mono: #646464;
+$grey: #ccc;
+
+$primary-darker: darken($primary, 15%);
+$secondary-darker: darken($secondary, 15%);
+$secondary-slightly-darker: darken($secondary, 7.5%);
+$secondary-lightest: lighten($secondary, 45%);
+$mono-darker: darken($mono, 15%);
+$mono-lighter: lighten($mono, 15%);
+$mono-lightest: lighten($mono, 45%);
+$grey-slightly-lighter: lighten($grey, 7.5%);
+
+/* Breakpoints */
+$xl-breakpoint: 1199px;
+$l-breakpoint: 991px;
+$m-breakpoint: 767px;
+$s-breakpoint: 575px;
+$xs-breakpoint: 359px;
