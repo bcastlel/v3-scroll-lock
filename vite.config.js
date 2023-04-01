@@ -5,9 +5,9 @@ import dts from 'vite-plugin-dts';
 
 export default defineConfig({
   plugins: [
-    // see https://github.com/gxmari007/vite-plugin-eslint#options
-    eslint({ fix: true }),
-    // see https://github.com/qmhc/vite-plugin-dts#options
+    // see https://github.com/gxmari007/vite-plugin-eslint#readme
+    eslint(),
+    // see https://github.com/qmhc/vite-plugin-dts#readme
     dts({ exclude: 'src/vite-env.d.ts' }),
   ],
   // see https://vitejs.dev/config/build-options.html

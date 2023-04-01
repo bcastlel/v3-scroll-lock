@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
-/* Reset */
 html,
 body {
   height: 100%;
@@ -19,12 +16,12 @@ html {
   margin: 0;
   border: 0;
   padding: 0;
-}
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+  &,
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
 }
 
 article,
@@ -62,11 +59,11 @@ img {
 
 a {
   text-decoration: none;
-}
 
-a:focus,
-a:active {
-  outline: 0;
+  &:focus,
+  &:active {
+    outline: 0;
+  }
 }
 
 input,
@@ -77,10 +74,12 @@ optgroup {
   font: inherit;
 }
 
-input::-moz-focus-inner,
-button::-moz-focus-inner {
-  border: 0;
-  padding: 0;
+input,
+button {
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
 }
 
 input::-ms-clear {
@@ -117,34 +116,15 @@ ul {
 blockquote,
 q {
   quotes: none;
-}
 
-blockquote::before,
-q::before,
-blockquote::after,
-q::after {
-  content: '';
-  content: none;
+  &::before,
+  &::after {
+    content: '';
+    content: none;
+  }
 }
 
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-/* Custom */
-#app {
-  padding: 16px;
-  min-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-h1 {
-  font-family: Inter, Helvetica, sans-serif;
-  font-size: 36px;
-  font-weight: 700;
-  color: #444;
-  text-align: center;
 }
