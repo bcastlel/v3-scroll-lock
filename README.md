@@ -110,6 +110,8 @@ const open = (): void => {
 const close = (): void => {
   isOpened.value = false;
 };
+
+defineExpose({ open, close });
 </script>
 ```
 
