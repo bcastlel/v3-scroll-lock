@@ -1,6 +1,6 @@
 # v3-scroll-lock
 
-**A scroll lock tool for Vue 3.** Works fine on all devices (and browsers). Uses [body-scroll-lock](https://github.com/willmcpo/body-scroll-lock) under the hood. Designed by analogy with [v-scroll-lock](https://github.com/phegman/v-scroll-lock), but intended for Vue 3. I've decided to make it separate from [v-scroll-lock](https://github.com/phegman/v-scroll-lock) because I'm going to improve this tool in the near future.
+**A scroll lock tool for Vue 3.** Works fine on all devices (and browsers). Uses [body-scroll-lock](https://github.com/willmcpo/body-scroll-lock) under the hood. Designed by analogy with [v-scroll-lock](https://github.com/phegman/v-scroll-lock), but intended for Vue 3.
 
 ## Demo
 You're welcome to see how it works by clicking on the following link — https://bcastlel.github.io/v3-scroll-lock/
@@ -49,12 +49,12 @@ When the value of the directive is set to `true`, the scroll will be locked on a
 #### Vue 3 Options API
 ```javascript
 <template>
-  <div v-if="isOpened" class="modal">
+  <div v-if="isOpen" class="modal">
     <button @click="close">
       X
     </button>
     
-    <div v-scroll-lock="isOpened" class="modal__content">
+    <div v-scroll-lock="isOpen" class="modal__content">
       <p class="paragraph">
         Sunt dolore magnam, distinctio numquam tenetur doloremque unde animi iure deleniti vero. Architecto omnis, impedit nesciunt est, ipsa nulla et possimus tempore aut neque voluptatem? Rerum laboriosam tempore eum vitae labore repellendus architecto nobis odio.
       </p>
@@ -67,15 +67,15 @@ export default {
   name: 'ModalComponent',
   data() {
     return {
-      isOpened: false,
+      isOpen: false,
     };
   },
   methods: {
     open() {
-      this.isOpened = true;
+      this.isOpen = true;
     },
     close() {
-      this.isOpened = false;
+      this.isOpen = false;
     },
   },
 };
@@ -85,12 +85,12 @@ export default {
 #### Vue 3 Composition API & TypeScript
 ```javascript
 <template>
-  <div v-if="isOpened" class="modal">
+  <div v-if="isOpen" class="modal">
     <button @click="close">
       X
     </button>
     
-    <div v-scroll-lock="isOpened" class="modal__content">
+    <div v-scroll-lock="isOpen" class="modal__content">
       <p class="paragraph">
         Sunt dolore magnam, distinctio numquam tenetur doloremque unde animi iure deleniti vero. Architecto omnis, impedit nesciunt est, ipsa nulla et possimus tempore aut neque voluptatem? Rerum laboriosam tempore eum vitae labore repellendus architecto nobis odio.
       </p>
@@ -101,14 +101,14 @@ export default {
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-const isOpened = ref(false);
+const isOpen = ref(false);
 
 const open = (): void => {
-  isOpened.value = true;
+  isOpen.value = true;
 };
 
 const close = (): void => {
-  isOpened.value = false;
+  isOpen.value = false;
 };
 
 defineExpose({ open, close });
@@ -128,7 +128,7 @@ By default, the options you passed during setup are applied.
 
 ```javascript
 <template>
-  <div v-if="isOpened" class="modal">
+  <div v-if="isOpen" class="modal">
     <button @click="close">
       X
     </button>
@@ -148,19 +148,19 @@ export default {
   name: 'ModalComponent',
   data() {
     return {
-      isOpened: false,
+      isOpen: false,
     };
   },
   methods: {
     open() {
-      this.isOpened = true;
+      this.isOpen = true;
 
       this.$nextTick(() => {
         lockScroll(this.$refs.content);
       });
     },
     close() {
-      this.isOpened = false;
+      this.isOpen = false;
       
       unlockScroll(this.$refs.content);
     },
